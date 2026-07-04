@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Diary</title>
+</head>
+
+<body>
+
+<h1>Welcome {{ username }}</h1>
+
+<form action="/save" method="POST">
+
+<input
+type="text"
+name="title"
+placeholder="Title"
+required>
+
+<br><br>
+
+<textarea
+name="content"
+rows="8"
+cols="50"
+placeholder="Write your diary..."
+required></textarea>
+
+<br><br>
+
+<button type="submit">
+
+Save Diary
+
+</button>
+
+</form>
+
+<hr>
+
+{% for entry in entries %}
+
+<h2>{{ entry[2] }}</h2>
+
+<p>{{ entry[3] }}</p>
+
+<a href="/edit/{{ entry[0] }}">Edit</a>
+
+<form action="/delete/{{ entry[0] }}" method="POST">
+
+<button>Delete</button>
+
+</form>
+
+<hr>
+
+{% endfor %}
+
+<a href="/logout">Logout</a>
+
+</body>
+</html>

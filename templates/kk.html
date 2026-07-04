@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diary App</title>
+<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+
+<body>
+
+<nav>
+    <h2>Diary App</h2>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#register">Register</a></li>
+        <li><a href="#login">Login</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+
+    <section id="home" class="page">
+        <h1>Welcome to the Diary App</h1>
+        <p>Keep your thoughts and memories safe and organized.</p>
+    </section>
+
+    <section id="register" class="page">
+        <div class="card">
+            <h1>Register</h1>
+            <form action="/register" method="POST">
+
+            <input type="text"  name="username" placeholder="Username"><br><br>
+            <input type="email" name="email" placeholder="Email"><br><br>
+            <input type="password" name="password" placeholder="Password"><br><br>
+
+            <button type="submit">Register</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="login" class="page">
+        <div class="card">
+            <h1>Login</h1>
+            <form action="/login" method="POST">
+
+            <input type="email" name="email" placeholder="Email"><br><br>
+            <input type="password" name="password" placeholder="Password"><br><br>
+
+            <button type="submit">Login</button>
+            </form>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
